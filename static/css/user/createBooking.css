@@ -1,0 +1,43 @@
+.heading{
+    text-align: center;
+    padding: 40px 0;
+}
+
+section{
+    background: #115;
+    background:radial-gradient(circle, #118 20%, #115 70%);
+    background-size: cover;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.book .row form{
+    padding: 25px;
+    border: border-box;
+    background: white;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+
+.book .row form .inputBox{
+    padding: 8px 0;
+
+}
+
+.book .row form .inputBox input{
+    width: 100%;
+    padding: 5px;
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+    text-transform: none;
+}
+
+.book .row form .inputBox h3{
+    color: #000;
+}
+
+

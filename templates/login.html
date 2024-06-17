@@ -1,0 +1,107 @@
+    {% extends "base.html" %}
+    {% block content %}
+<style>
+    /* Global styles */
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9; /* light gray background */
+    }
+
+    /* Login container styles */
+
+    .login-container {
+        max-width: 400px;
+        margin: 40px auto;
+        margin-top: 90px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 18px;
+    }
+
+    .login-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffd700; /* gold color */
+        margin-bottom: 20px;
+    }
+
+    /* Form styles */
+
+    .login-form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+    }
+
+    .form-control:focus {
+        border-color: #ffd700; /* gold color */
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .btn {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ffd700; /* gold color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #ffc400; /* darker gold color */
+    }
+
+    .signup-link {
+        font-size: 14px;
+        color: #666;
+        margin-top: 20px;
+    }
+
+    .signup-link a {
+        color: #ffd700; /* gold color */
+        text-decoration: none;
+    }
+
+    .signup-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+    <div style="width: 100%; height: 150px; background: #001A33"></div>
+<div class="login-container">
+    <h1 class="login-title">Login to the World Hotels</h1>
+
+    <form method="POST" action="" class="login-form">
+        {{ login_form.hidden_tag() }}
+        <div class="form-group">
+            {{ login_form.email(class="form-control", placeholder="Email") }}
+        </div>
+        <div class="form-group">
+            {{ login_form.password(class="form-control", placeholder="Password") }}
+        </div>
+        <div class="form-group">
+            {{ login_form.submit(class="btn btn-gold") }}
+        </div>
+    </form>
+
+    <p class="signup-link">Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
+</div>
+{% endblock %}
+    {% block footer %}
+    {% endblock %}

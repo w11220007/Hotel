@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Looking for a luxury hotel in the UK? Each World Hotels
+    property offers unforgettable experiences with the highest standard of service!">
+    <meta name="authors" content="Dao Hieu Trung, Bui Minh Huan, Le Thi Cham Anh, Nguyen Quoc Hung">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>The Base</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e2fdf82307.js" crossorigin="anonymous"></script>
+</head>
+<script src="/static/js/base-loader.js"></script>
+<div id="loader" class="loader"></div>
+<body>
+    {% block header %}
+    <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="/">
+                <img src="{{url_for('static', filename='img/logo/favicon.ico')}}" alt="World Hotels' Logo">
+            </a>
+            <p class="text-white brand-name pt-3">World Hotels</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item nav-item-outline-dark custom-underline flex-fill dropdown">
+                        <a class="nav-link mx-2" href="/list">FIND HOTEL</a>
+                        <ul class="dropdown-menu" id="accommodationDropdown">
+                            <li><a class="dropdown-item" href="/search">By Destination</a></li>
+                            <li><a class="dropdown-item" href="/search">By Price</a></li>
+                            <li><a class="dropdown-item" href="/search">By Ranking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-item-outline-dark custom-underline flex-fill">
+                        <a class="nav-link text-white mx-2" href="/aboutus">ABOUT US</a>
+                    </li>
+                    <li class="nav-item nav-item-outline-dark custom-underline flex-fill">
+                        <a class="nav-link text-white mx-2" href="/experiences">EXPERIENCES</a>
+                    </li>
+                    <li class="nav-item nav-item-outline-dark custom-underline flex-fill">
+                        <a class="nav-link text-white mx-2" href="/">CONTACT US</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link me-2 booking" href="/book_hotel">BOOK NOW</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        {% if current_user.is_authenticated %}
+                        <a class="nav-link me-5 login" href="/user">Welcome, {{ current_user.email }}</a>
+                        {% else %}
+                        <a class="nav-link me-5 login" href="/register">JOIN TODAY</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    {% block content %}<div class="empty-box"></div>{% endblock %}
+    <script src="/static/js/base-dropdown.js"></script>
+    {% block footer %}
+    <footer class="text-white">
+        <div class="container-fluid py-5">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <a class="footer-brand" href="/">
+                        <img src="{{url_for('static', filename='img/logo/favicon.ico')}}" alt="World Hotels' Logo">
+                    </a>
+                </div><br><br><br><br>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <h5><strong>LOCATION</strong></h5>
+                    <p>Coldharbour Lane, Stoke Gifford, <br>Bristol, United Kingdom</p>
+                </div><br><br><br><br><br>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <h5><strong>CONTACT</strong></h5>
+                    <p>+49 69 66056 100<br>info@worldhotelsuk.com</p>
+                </div><br><br><br><br><br>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <h5 class="p-2">Follow Us On</h5>
+                    <a class="social-media mx-1" href="https://www.instagram.com/worldhotels_collection/" target="_blank">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                    <a class="social-media mx-1" href="https://www.facebook.com/WorldHotelsCollection" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a class="social-media mx-1" href="https://www.tiktok.com/@worldhotels?_t=8ldBXVKnkRk&_r=1" target="_blank">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a class="social-media mx-1" href="https://www.youtube.com/@worldhotels" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a class="social-media ms-1" href="https://www.linkedin.com/company/worldhotels/" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="text-white copyright">
+        <div class="container-fluid text-center">
+            <p>© World Hotels 2024. All Rights Reserved<br>
+            Each World Hotels™ branded property is independently owned and operated.
+            </p>
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>
+
+

@@ -1,0 +1,215 @@
+.glasgow-scotland-background{
+    position: relative;
+    width: 102%;
+    height: 1500px;
+    background-image: url("/static/img/webpage/glasgow-scotland.png");
+    background-size: cover;
+    background-position: auto;
+    right: 12px;
+}
+
+.greetings{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.greetings .title{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.greetings .first-words{
+    font-size: 20px;
+    padding: 10px 80px;
+}
+
+.about-wh-world-of-care,
+.about-wh-world-of-connections{
+    position: relative;
+    width: 103%;
+    height: 600px;
+    right: 12px;
+    background: #113;
+}
+
+.about-wh-world-of-care .background{
+    background-image: url("/static/img/webpage/about-wh-world-of-care.png")
+}
+
+.about-wh-world-of-connections .background{
+    background-image: url("/static/img/webpage/about-wh-world-of-connections.png");
+}
+
+.about-wh-world-of-care .background,
+.about-wh-world-of-connections .background{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    background-size: cover;
+    right: 4%;
+    bottom: 10%;
+}
+
+.world-of-care,
+.world-of-connections{
+    position: absolute;
+    left: 0;
+    width: 46%;
+    height: 100%;
+    text-align: center;
+}
+
+.world-of-care .title,
+.world-of-connections .title{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.world-of-care .title{
+    padding-top: 110px;
+}
+
+.world-of-connections .title{
+    padding-top: 90px;
+}
+
+.world-of-care .description,
+.world-of-connections .description{
+    font-size: 20px;
+}
+
+.world-of-care .description{
+    padding: 80px;
+}
+
+.world-of-connections .description{
+    padding: 70px;
+}
+
+.about-wh-world-of-your-own,
+.about-wh-world-of-good{
+    position: relative;
+    width: 103%;
+    height: 600px;
+    right: 12px;
+    background: #115;
+}
+
+.about-wh-world-of-your-own .background{
+    background-image: url("/static/img/webpage/about-wh-world-of-your-own.png");
+}
+
+.about-wh-world-of-good .background{
+    background-image: url("/static/img/webpage/about-wh-world-of-good.png");
+}
+
+.about-wh-world-of-your-own .background,
+.about-wh-world-of-good .background{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    background-size: cover;
+    left: 4%;
+    bottom: 10%;
+}
+
+.world-of-your-own,
+.world-of-good{
+    position: absolute;
+    right: 0;
+    width: 46%;
+    height: 100%;
+}
+
+.world-of-your-own .title,
+.world-of-good .title{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.world-of-your-own .title{
+    padding-top: 110px;
+}
+
+.world-of-good .title{
+    padding-top: 140px;
+}
+
+.world-of-your-own .description,
+.world-of-good .description{
+    font-size: 20px;
+    padding: 80px 30px 100px 40px;
+    text-align: left;
+}
+
+.about-wh-history{
+    position: relative;
+    width: 103%;
+    height: 700px;
+    right: 12px;
+    background: #113;
+}
+
+.about-wh-history .background{
+    position: absolute;
+    width: 94%;
+    height: 90%;
+    background-image: url("/static/img/webpage/about-wh-history.png");
+    background-size: cover;
+    left: 3%;
+    bottom: 5%;
+}
+
+.history{
+    position: absolute;
+    width: 94%;
+    height: 90%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 100%);
+    left: 3%;
+    bottom: 5%;
+    z-index: 1;
+}
+
+.history .title{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.history .headline{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.history .description{
+    font-size: 20px;
+    padding: 30px 50px 20px 40px;
+    text-align: left;
+}
+
+.history a{
+    background: black;
+    font-weight: bold;
+}
+
+.history a:hover{
+    background: #4d4d00;
+}
+
+.history a:focus{
+    background: #333 !important;
+}
+
+

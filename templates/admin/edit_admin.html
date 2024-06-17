@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<div style="width: 100%; height: 80px;"></div>
+<div class="container">
+    <h1 class="display-4">Edit Admin</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.admin_name.label(class="col-form-label") }}
+            {{ form.admin_name(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.admin_email.label(class="col-form-label") }}
+            {{ form.admin_email(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.priviledge_level.label(class="col-form-label") }}
+            {{ form.priviledge_level(class="form-control") }}
+        </div>
+        <br>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+<div style="width: 100%; height: 230px;"></div>
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Global styles */
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9; /* light gray background */
+    }
+
+    /* Register container styles */
+
+    .register-container {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 13px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .register-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffd700; /* gold color */
+        margin-bottom: 20px;
+    }
+
+    /* Form styles */
+
+    .register-form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+    }
+
+    .form-control:focus {
+        border-color: #ffd700; /* gold color */
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .form-check-input {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .form-check-label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .btn {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #ffd700; /* gold color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #ffc400; /* darker gold color */
+    }
+
+    .login-link {
+        font-size: 14px;
+        color: #666;
+        margin-top: 20px;
+    }
+
+    .login-link a {
+        color: #ffd700; /* gold color */
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<div class="register-container">
+    <h1 class="register-title">Register Page</h1>
+
+    <form method="POST" action="" class="register-form">
+        {{ register_form.hidden_tag() }}
+        <div class="form-group">
+            {{ register_form.email(class="form-control", placeholder="Email") }}
+        </div>
+        <div class="form-group">
+            {{ register_form.password(class="form-control", placeholder="Password") }}
+        </div>
+        <div class="form-group">
+            {{ register_form.confirm(class="form-control", placeholder="Confirm Password") }}
+        </div>
+        <div class="form-group">
+            {{ register_form.accept_tos(class="form-check-input") }}
+            <label for="accept_tos" class="form-check-label">I accept the Terms of Service</label>
+        </div>
+        <div class="form-group">
+            {{ register_form.submit(class="btn btn-gold") }}
+        </div>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,39 @@
+<!-- edit_room.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<div style="width: 100%; height: 30px;"></div>
+<div class="container">
+    <h1 class="display-4 mb-4">Edit Room</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="room_type" class="col-form-label">Room Type:</label>
+            <select id="room_type" name="room_type" class="form-control">
+                <option value="1">Standard</option>
+                <option value="2">Superior</option>
+                <option value="3">Deluxe</option>
+                <option value="4">Suite</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="room_capacity" class="col-form-label">Room Capacity:</label>
+            <select id="room_capacity" name="room_capacity" class="form-control">
+                <option value="1">Single</option>
+                <option value="2">Double</option>
+                <option value="3">Trio</option>
+                <option value="4">Family</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="base_price" class="col-form-label">Base Price:</label>
+            <input type="number" id="base_price" name="base_price" value="{{ room.base_price }}" class="form-control">
+        </div>
+        <br>
+        <!--... -->
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary">
+        </div>
+    </form>
+</div><div style="width: 100%; height: 80px;"></div>
+{% endblock %}

@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.loader{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+}
+
+.navbar-transparent{
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img,
+.footer-brand img{
+    width: 45px;
+}
+
+.brand-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: #333 !important;
+}
+
+.dropdown a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    background: #333;
+    padding: 8px 20px;
+}
+
+.dropdown a:hover{
+    color: white;
+    background: #4d4d00;
+}
+
+.dropdown > .nav-link,
+.dropdown > .nav-link:hover{
+    color: white;
+    background: initial;
+}
+
+.custom-underline{
+    text-decoration: none;
+    position: relative;
+}
+  
+.custom-underline::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -3px;
+    left: 0;
+    background: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: 0.5s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+  
+.custom-underline:hover::after,
+.custom-underline:focus::after{
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.booking:hover, .login:hover{
+    transition: all 0.4s ease-in-out;
+    animation: growShrink 0.8s infinite;
+}
+
+.navbar-nav:last-child a{
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+@keyframes growShrink{
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.empty-box{
+    box-sizing: border-box;
+    height: 200px;
+}
+
+footer{
+    background: #444;
+}
+
+.footer-brand{
+    padding-top: 20px;
+    padding-left: 8%;
+}
+
+.social-media a{
+    background: none;
+}
+
+.fa-square-instagram{
+    background: radial-gradient(circle at 33% 100%, #fed373 4%,
+    #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.fa-facebook{
+    color: #0866FF;
+}
+
+.fa-tiktok{
+    color: #fff;
+}
+
+.fa-youtube{
+    color: #f00;
+}
+
+.fa-linkedin{
+    color: #0077b5;
+}
+
+.copyright{
+    background: black;
+    height: 33px;
+    font-size: 12px;
+}
+
+div#loader {
+    width: 100dvw;
+    height: 100dvh;
+    display: none;
+    background: url(/static/loadingimage.gif) no-repeat;
+    cursor: wait;
+}
+
+

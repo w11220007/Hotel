@@ -1,0 +1,99 @@
+<!-- search_rooms.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Rooms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"] {
+            width: 100%;
+            height: 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        #search-results {
+            margin-top: 20px;
+        }
+        #search-results ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #search-results li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        #search-results li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Search Rooms</h1>
+<form id="search-form">
+    <label for="hid">Hotel ID:</label>
+    <input type="number" id="hid" name="hid" required>
+
+    <label for="room_type">Room Type:</label>
+    <input type="text" id="room_type" name="room_type" required>
+
+    <label for="room_capacity">Room Capacity:</label>
+    <input type="number" id="room_capacity" name="room_capacity" required>
+
+    <button type="submit">Search</button>
+</form>
+<div id="search-results"></div>
+
+<script>
+    const form = document.getElementById("search-form");
+    const searchResults = document.getElementById("search-results");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const hid = document.getElementById("hid").value;
+        const roomType = document.getElementById("room_type").value;
+        const roomCapacity = document.getElementById("room_capacity").value;
+
+        fetch(`/search_rooms?hid=${hid}&room_type=${roomType}&room_capacity=${roomCapacity}`)
+            .then(response => response.json())
+            .then(data => {
+                const resultsHtml = data.map(room => {
+                    return `<li>RID: ${room.RID}, HID: ${room.HID}, Room Type: ${room.room_type}, Room Capacity: ${room.room_capacity}</li>`;
+                }).join("");
+                searchResults.innerHTML = `<ul>${resultsHtml}</ul>`;
+            })
+            .catch(error => {
+                searchResults.innerHTML = `<p>Error: ${error.message}</p>`;
+            });
+    });
+</script>
+</body>
+</html>

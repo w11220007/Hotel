@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Luxurious Hotels in Cambridge | World Hotels UK</title>
+<link rel="stylesheet" href="{{url_for("static", filename="css/user/cambridge.css")}}">
+{% endblock %}
+{% block content %}
+<div class="body">
+    <div class="extra-space"></div>
+    <div class="title text-white">FIND YOUR FAVORITE HOTEL IN CAMBRIDGE</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Hotel</th>
+                <th>Address</th>
+                <th>Hotline</th>
+                <th>Services</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hotel in hotels %}
+                {% if "Trumpington St, Cambridge" in hotel.Address %}
+                <tr>
+                    <td>{{ hotel.HID }}</td>
+                    <td>{{ hotel.HName }}</td>
+                    <td>{{ hotel.Address }}</td>
+                    <td>{{ hotel.Hotline }}</td>
+                    <td>{{ hotel.Services }}</td>
+                    <td>{{ hotel.Ratings }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="extra-space"></div>
+</div>
+{% endblock %}
+
+

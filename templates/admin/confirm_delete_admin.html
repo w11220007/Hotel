@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<div style="width: 100%; height: 100px;"></div>
+<div class="container">
+    <h1 class="display-4">Confirm Delete Admin</h1>
+    <p class="alert alert-danger">Are you sure you want to delete {{ admin.admin_name }} ({{ admin.admin_email }})?</p>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{{ url_for('personnel') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<div style="width: 100%; height: 230px;"></div>
+{% endblock %}

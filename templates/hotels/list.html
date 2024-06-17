@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block head %}
+<script>
+  function showImage(imageVar) {
+    var image = document.getElementById(imageVar);
+    image.style.display = "block";
+    image.style.position = "fixed";
+    image.style.right = "10%";
+    image.style.top = "40%";
+    image.style.marginTop = "-50px"; // adjust the margin top to center the image vertically
+    image.style.border = "20px solid #fff";
+    image.style.borderRadius = "20px";
+
+  }
+
+  function hideImage(imageVar) {
+    var image = document.getElementById(imageVar);
+    image.style.display = "none";
+  }
+</script>
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  tr:hover {
+    background-color: #add8e6;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>HID</th>
+      <th>HName</th>
+      <th>Address</th>
+      <th>Hotline</th>
+      <th>Services</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for hotel in hotels %}
+  <tr
+          onclick="window.location='/book_hotel?hotel_id={{ hotel.hid }}';"
+          onmouseover="showImage({{hotel.hid}})"
+          onmouseleave="hideImage({{hotel.hid}})"
+  >
+    <img
+            id="{{hotel.hid}}"
+            src="{{url_for('static', filename='img/hotels/{}.jpg'.format(hotel.hid))}}"
+            alt="{{hotel.hid}} Image"
+            style="display: none;">
+    <td>{{ hotel.hid }}</td>
+    <td>{{ hotel.hname }}</td>
+    <td>{{ hotel.address }}</td>
+    <td>{{ hotel.hotline }}</td>
+    <td>{{ hotel.services }}</td>
+
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if hotels|length >= limit %}
+<p class="text-center">
+  <a href="{{ url_for('get_hotels', limit=limit+10) }}" class="btn btn-primary">See More</a>
+</p>
+{% endif %}
+{% endblock %}

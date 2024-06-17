@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Looking for a luxury hotel in the UK? Each World Hotels
+    property offers unforgettable experiences with the highest standard of service!">
+    <meta name="authors" content="Dao Hieu Trung, Bui Minh Huan, Le Thi Cham Anh, Nguyen Quoc Hung">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Today | World Hotels UK</title>
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/createBooking.css">
+    <link rel="shortcut icon" href="static/img/logo/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e2fdf82307.js" crossorigin="anonymous"></script>
+    <style> /*
+        .heading{
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        section{
+            background: #115;
+            background:radial-gradient(circle, #118 20%, #115 70%);
+            background-size: cover;
+        }
+        
+        /*.book .row{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+        }
+        
+        .book .row .img img{
+            width: 50px;
+            margin: 48px;
+        }*/
+        /*
+        .row{
+            display: flex;
+            justify-content: center;
+        }
+        
+        .book .row form{
+            padding: 25px;
+            border: border-box;
+            background: white;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            border: 1px solid #000;
+        }
+        
+        .book .row form .inputBox{
+            padding: 8px 0;
+        
+        }
+        
+        .book .row form .inputBox input{
+            width: 100%;
+            padding: 5px;
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+            text-transform: none;
+        }
+        
+        .book .row form .inputBox h3{
+            color: #000;
+        }*/
+    </style>
+</head>
+<body>
+    <section class="book" id="book">
+        <div class="empty-box"></div>
+        <h1 class="heading text-white">
+            Experience Hotels In The UK
+        </h1>
+        <div class="row">
+            <form action="" class="col-xl-6 col-lg-8 col-md-10 col-sm-12" id="bookingForm">
+                <div class="inputBox">
+                    <h4>DESTINATION</h4>
+                    <input type="text" name="city" id="city" placeholder="Select destination">
+                </div>
+                <div class="inputBox">
+                    <h4>HOTEL</h4>
+                    <input type="text" name="hotel" id="hotel" placeholder="Select hotel">
+                </div>
+                <div class="inputBox">
+                    <h4>ROOM TYPE</h4>
+                    <input type="text" name="room type" id="roomType" placeholder="Select room type">
+                </div>
+                <div class="inputBox">
+                    <h4>ROOM NUMBER</h4>
+                    <input type="number" name="room number" id="roomNumber" placeholder="Select room number">
+                </div>
+                <div class="inputBox">
+                    <h4>CHECK-IN</h4>
+                    <input type="datetime-local" name="check-in-time" id="checkInTime">
+                </div>
+                <div class="inputBox">
+                    <h4>CHECK-OUT</h4>
+                    <input type="datetime-local" name="check-out-time" id="checkOutTime">
+                </div>
+                <input type="submit" name="submit" id="submit" class="btn" value="BOOK NOW">
+            </form>
+        </div>
+        <div class="empty-box"></div>
+    </section>
+    <script src="static/js/createBooking.js">
+/*        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const checkInTime = new Date(document.getElementById("checkInTime").value);
+            const checkOutTime = new Date(document.getElementById("checkOutTime").value);
+            
+            if (checkInTime.getTime() < Date.now() + 24 * 60 * 60 * 1000) {
+                alert("Check-in time must be at least 1 days after the current time.");
+                return;
+            }
+            
+            if (checkOutTime.getTime() < checkInTime.getTime() + 12 * 60 * 60 * 1000) {
+                alert("Check-out time must be at least 12 hours after the check-in.");
+                return;
+            }
+        
+            if (checkInTime.getTime() + 30 * 24 * 60 * 60 * 1000 < checkOutTime.getTime()) {
+                alert("Hotel stay must be within 30 days. If a longer stay is required, please make separate bookings.");
+                return;
+            }
+            
+            const formInputs = document.querySelectorAll("#bookingForm input");
+            let isFormValid = true;
+            let firstEmptyInput = null;
+            
+            formInputs.forEach(input => {
+                if (input.value === "") {
+                    if (!firstEmptyInput) {
+                        firstEmptyInput = input;
+                    }
+                    isFormValid = false;
+                }
+            });
+            
+            if (!isFormValid) {
+                if (firstEmptyInput) {
+                    alert(`Please fill in ${firstEmptyInput.previousElementSibling.textContent}`);
+                }
+            } else {
+                if (confirm("Are you sure you want to make the booking?")) {
+                    alert("Booking successful!");
+                }
+            }
+        }) */
+    </script>
+</body>
+</html>

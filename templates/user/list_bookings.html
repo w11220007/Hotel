@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 100%; height: 150px; background: #001A33"></div>
+<div style="width: 100%; height: 50px;"></div>
+<!-- Use a more semantic heading structure -->
+<div class="container">
+    <h2 class="mb-3">My Bookings</h2>
+
+    <!-- Use a table to display tabular data with Bootstrap styling -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Room ID</th>
+                <th scope="col">Check-in Date</th>
+                <th scope="col">Check-out Date</th>
+                <th scope="col">Final Price</th>
+                <th scope="col">Payment Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for booking in bookings %}
+            <tr
+                    class="{% if booking.payment_status == 'not applicable' or booking.payment_status == 'failed' %}table-secondary{% elif booking.payment_status == 'processing' %}table-warning{% elif booking.payment_status == 'success' %}table-success{% endif %}"
+                    onclick="window.location='/user/payment?booking_id={{ booking_id }}';"
+            >
+                <td>{{ booking.room.rid }}</td>
+                <td>{{ booking.check_in_date }}</td>
+                <td>{{ booking.check_out_date }}</td>
+                <td>{{ booking.final_price }}</td>
+                <td>{{ booking.payment_status }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Payment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2 class="mb-3">Cancel Payment</h2>
+    <p>Are you sure you want to cancel your payment?</p>
+    <form method="POST" action="/payment/cancel">
+        <input type="hidden" name="payment_id" value="{{ payment_id }}">
+        <button type="submit" class="btn btn-danger"
+        >Yes, cancel payment</button>
+        <a href="/" class="btn btn-secondary">No, go back</a>
+    </form>
+</div>
+</body>
+</html>

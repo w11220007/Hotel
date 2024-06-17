@@ -1,0 +1,50 @@
+.spline-design{
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.thames-river-background{
+    position: relative;
+    width: 101.8%;
+    height: 600px;
+    background-image: url("/static/img/webpage/thames-river-at-night.png");
+    background-size: cover;
+    background-position: auto;
+    right: 12px;
+}
+
+.title-container{
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    transform: translateX(-50%);
+    width: 570px;
+    height: 170px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.6) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.title-text{
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+.intro {
+    background: #113;
+    padding: 10px 80px;
+}
+
+.intro p{
+    font: Arial;
+    font-size: 20px;
+    padding: 10px 80px;
+}
+
+

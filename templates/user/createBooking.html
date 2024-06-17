@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Book Today | World Hotels UK</title>
+<link rel="stylesheet" href="{{url_for("static", filename="css/createBooking.css")}}">
+{% endblock %}
+{% block content %}
+<section class="book" id="book">
+    <div class="empty-box"></div>
+    <h1 class="heading text-white">
+        Experience Hotels In The UK
+    </h1>
+    <div class="row">
+        <form action="" class="col-xl-6 col-lg-8 col-md-10 col-sm-12" id="bookingForm">
+            <div class="inputBox">
+                <h4>DESTINATION</h4>
+                <input type="text" name="city" id="city" placeholder="Select destination">
+            </div>
+            <div class="inputBox">
+                <h4>HOTEL</h4>
+                <input type="text" name="hotel" id="hotel" placeholder="Select hotel">
+            </div>
+            <div class="inputBox">
+                <h4>ROOM TYPE</h4>
+                <input type="text" name="room type" id="roomType" placeholder="Select room type">
+            </div>
+            <div class="inputBox">
+                <h4>ROOM NUMBER</h4>
+                <input type="number" name="room number" id="roomNumber" placeholder="Select room number">
+            </div>
+            <div class="inputBox">
+                <h4>CHECK-IN</h4>
+                <input type="datetime-local" name="check-in-time" id="checkInTime">
+            </div>
+            <div class="inputBox">
+                <h4>CHECK-OUT</h4>
+                <input type="datetime-local" name="check-out-time" id="checkOutTime">
+            </div>
+            <input type="submit" name="submit" id="submit" class="btn" value="BOOK NOW">
+        </form>
+    </div>
+    <div class="empty-box"></div>
+</section>
+<script src="../static/js/createBooking.js"></script>
+{% endblock %}
+
+
